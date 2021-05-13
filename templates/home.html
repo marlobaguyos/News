@@ -2,11 +2,11 @@
 
 {% block title %}Home{% endblock title %}
 
-{% block content %} 
-
 {% block content %}
   {% if user.is_authenticated %}
     Hi {{ user.username }}
+      <p><a href="{% url 'logout' %}">Log Out</a></p>
+  {% else %}
     <p>
       <a href="{% url 'login' %}">Log in</a> |
       <a href="{% url 'signup' %}">Sign up</a>

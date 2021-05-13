@@ -6,9 +6,11 @@ from django.contrib.auth.forms import (
 from .models import CustomUser
 
 class CustomUserCreationForm(UserCreationForm):
-  model = CustomUser
-  fields = UserCreationForm.Meta.fields + ('age', )
+  class Meta:
+    model = CustomUser
+    fields = UserCreationForm.Meta.fields + ('age', )
 
 class CustomUserChangeForm(UserChangeForm):
-  model = CustomUser
-  fields = UserChangeForm.Meta.fields
+  class Meta:
+    model = CustomUser
+    fields = UserChangeForm.Meta.fields
