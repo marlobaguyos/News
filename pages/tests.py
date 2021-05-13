@@ -9,7 +9,7 @@ class HomePageTests(SimpleTestCase):
 
     def test_view_url_by_name(self):
         response = self.client.get(reverse('home'))
-        self.assertEqual(respons.status_code, 200)
+        self.assertEqual(response.status_code, 200)
 
     def test_view_user_correct_template(self):
         response = self.client.get(reverse('home'))
@@ -21,7 +21,7 @@ class SignUpTests(TestCase):
     email = "newuser@email.com"
 
     def test_signup_page_status_code(self):
-        response = self.client.get('/accounts/signup')
+        response = self.client.get('/accounts/signup/')
         self.assertEqual(response.status_code, 200)
 
     def test_view_url_by_name(self):
