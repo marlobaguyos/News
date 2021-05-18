@@ -28,19 +28,24 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'password_change' %}">Change Password</a>
                         </li>
-                    
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                        </li>
+
+                        {% else %}
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Log In</a>
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'password_reset' %}">Password Reset</a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'signup' %}">Sign Up</a>
                         </li>
-                        
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
-                        </li>
+                
                         {% endif %}
                     </ul>
                 </div>
